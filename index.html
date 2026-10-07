@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garuda99...</title>
+     <script defer src="https://cloud.umami.is/script.js" data-website-id="e3c0c569-9472-4eef-8446-304bbc6d58e8"></script>
+    <style>
+        /* 重置默认边距，使用 Flex 实现全屏居中 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;                /* 手机全屏高度 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;          /* 垂直居中 */
+            align-items: center;              /* 水平居中 */
+            background: #f5f7fa;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* ----- 图标容器，负责旋转动画 ----- */
+        .icon-wrapper {
+            display: inline-block;
+            line-height: 1;
+            animation: spin 1s linear infinite; /* 匀速旋转 */
+            margin-bottom: 20px;
+        }
+
+        /* 图片本身尺寸控制 */
+        .icon-wrapper img {
+            width: 80px;      /* 调整为你想要的大小 */
+            height: 80px;
+            display: block;   /* 避免下方小间隙 */
+        }
+
+        /* 旋转动画 */
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        p#countdown {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* 手机端适配（可忽略，因为上面已经全屏居中） */
+        @media (max-width: 480px) {
+            .icon-wrapper img {
+                width: 60px;   /* 手机屏幕适当缩小图标 */
+                height: 60px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1></h1>
+
+
+    <div class="icon-wrapper">
+        <img src="https://pub-accea120abaf47d3afac9bbaf7fd26da.r2.dev/garuda99-loading.svg" alt="YK1">
+    </div>
+
+    <p id="countdown">Garuda99...</p>
+
+    <script>
+        (function() {
+
+            const sites = [
+                'https://garuda99q.com',
+                'https://garuda99r.com',
+                'https://garuda99p.com',
+                'https://garuda99g.com',
+                'https://garuda99n.com'
+            ];
+
+            const randomIndex = Math.floor(Math.random() * sites.length);
+            const targetUrl = sites[randomIndex];
+
+            const countdownEl = document.getElementById('countdown');
+            let seconds = 1;
+
+
+            setTimeout(function() {
+                window.location.href = targetUrl;
+            }, 1300);
+
+
+            if (countdownEl) {
+                const interval = setInterval(function() {
+                    seconds--;
+                    if (seconds > 0) {
+                        countdownEl.textContent = seconds + ' 秒后自动跳转';
+                    } else {
+                        countdownEl.textContent = 'Garuda99...';
+                        clearInterval(interval);
+                    }
+                }, 1000);
+            }
+        })();
+    </script>
+</body>
+</html>
