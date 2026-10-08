@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garuda99...</title>
-     <script defer src="https://cloud.umami.is/script.js" data-website-id="e3c0c569-9472-4eef-8446-304bbc6d58e8"></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="e3c0c569-9472-4eef-8446-304bbc6d58e8"></script>
     <style>
-        /* 重置默认边距，使用 Flex 实现全屏居中 */
         * {
             margin: 0;
             padding: 0;
@@ -15,75 +14,125 @@
 
         body {
             font-family: Arial, sans-serif;
-            min-height: 100vh;                /* 手机全屏高度 */
+            min-height: 100vh;
+            min-height: 100svh;
             display: flex;
             flex-direction: column;
-            justify-content: center;          /* 垂直居中 */
-            align-items: center;              /* 水平居中 */
+            justify-content: center;
+            align-items: center;
             background: #f5f7fa;
             color: #333;
             text-align: center;
             padding: 20px;
         }
 
-        h1 {
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        /* ----- 图标容器，负责旋转动画 ----- */
+        /* SVG 自带动画，外层不再旋转，也不限制成正方形。 */
         .icon-wrapper {
-            display: inline-block;
-            line-height: 1;
-            animation: spin 1s linear infinite; /* 匀速旋转 */
-            margin-bottom: 20px;
+            width: 520px;
+            max-width: 100%;
+            line-height: 0;
         }
 
-        /* 图片本身尺寸控制 */
-        .icon-wrapper img {
-            width: 80px;      /* 调整为你想要的大小 */
-            height: 80px;
-            display: block;   /* 避免下方小间隙 */
+        .icon-wrapper > svg {
+            display: block;
+            width: 100%;
+            height: auto;
         }
 
-        /* 旋转动画 */
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        p#countdown {
+        #countdown {
             font-size: 18px;
             margin-top: 10px;
-        }
-
-        /* 手机端适配（可忽略，因为上面已经全屏居中） */
-        @media (max-width: 480px) {
-            .icon-wrapper img {
-                width: 60px;   /* 手机屏幕适当缩小图标 */
-                height: 60px;
-            }
-            h1 {
-                font-size: 20px;
-            }
         }
     </style>
 </head>
 <body>
-
-    <h1></h1>
-
-
     <div class="icon-wrapper">
-        <img src="https://pub-accea120abaf47d3afac9bbaf7fd26da.r2.dev/garuda99-loading.svg" alt="YK1">
+        <!-- 纯路径内联 SVG；鹰头为近似重绘，不依赖图片或字体文件。 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300" viewBox="0 0 640 300" role="img" aria-labelledby="g99-title g99-desc">
+  <title id="g99-title">GARUDA99 loading</title>
+  <desc id="g99-desc">An approximate vector redraw of the GARUDA99 logo, with a gold shimmer and loading animation. All visible artwork is SVG paths.</desc>
+  <defs>
+    <linearGradient id="g99-gold" x1="0" y1="0" x2=".25" y2="1">
+      <stop stop-color="#fff4a5"/><stop offset=".26" stop-color="#ffdb4f"/><stop offset=".52" stop-color="#d08c13"/><stop offset=".72" stop-color="#ffe274"/><stop offset="1" stop-color="#ac6410"/>
+    </linearGradient>
+    <linearGradient id="g99-silver" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffffff"/><stop offset=".38" stop-color="#ffffff"/><stop offset=".5" stop-color="#b8bdc5"/><stop offset=".72" stop-color="#f9fafb"/><stop offset="1" stop-color="#9ba3ad"/>
+    </linearGradient>
+    <linearGradient id="g99-feather" x1="0" y1="0" x2="1" y2=".7">
+      <stop stop-color="#b77308"/><stop offset=".35" stop-color="#ffcf35"/><stop offset=".62" stop-color="#fff4ac"/><stop offset="1" stop-color="#bc780e"/>
+    </linearGradient>
+    <linearGradient id="g99-shine">
+      <stop stop-color="#fffbe2" stop-opacity="0"/><stop offset=".52" stop-color="#fffbe2" stop-opacity=".72"/><stop offset="1" stop-color="#fffbe2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="g99-flow">
+      <stop stop-color="#b9801a" stop-opacity="0"/><stop offset=".5" stop-color="#dfad37"/><stop offset="1" stop-color="#f9da77"/>
+    </linearGradient>
+    <radialGradient id="g99-aura">
+      <stop stop-color="#dba62f" stop-opacity=".13"/><stop offset="1" stop-color="#dba62f" stop-opacity="0"/>
+    </radialGradient>
+    <g id="g99-art">
+      <!-- Hand-drawn eagle: dark silhouette, gold feather ribbons, silver head. -->
+      <g transform="translate(61 29) scale(1.05)" stroke-linejoin="round">
+        <path d="M57 2C34 15 23 39 26 62C14 54 8 41 10 29C-2 58 4 83 29 104C15 99 6 90 1 80C4 112 22 139 56 157C80 143 95 116 97 91L112 70C120 59 127 57 138 67C140 47 125 34 107 35L80 39C60 37 51 26 57 2Z" fill="#17130c" stroke="#956219" stroke-width="2.2"/>
+        <path d="M60 39C77 45 91 36 108 41C123 41 134 49 135 60C125 55 116 58 109 69C97 87 93 112 77 133C89 105 87 86 77 71C68 58 62 49 60 39Z" fill="url(#g99-silver)" stroke="#463e2c" stroke-width="1.8"/>
+        <path d="M65 44C81 50 95 41 111 47L99 52C83 54 75 51 65 44Z" fill="#fff" opacity=".8"/>
+        <path d="M105 48L121 50L111 55L105 48Z" fill="#17130c"/>
+        <path d="M113 49L119 50L114 52Z" fill="#f5c94d"/>
+        <path d="M122 51C132 53 138 59 136 66C129 59 122 61 118 65L121 57L122 51Z" fill="url(#g99-gold)" stroke="#6b4309" stroke-width="1.1"/>
+        <g fill="url(#g99-feather)" stroke="#68420d" stroke-width="1.1">
+          <path d="M55 6C33 27 31 52 44 69C54 81 68 85 79 96C73 76 57 62 51 49C45 36 48 20 55 6Z"/>
+          <path d="M29 21C16 47 26 70 49 83C60 90 72 99 78 110C77 93 62 81 47 72C29 61 24 43 29 21Z"/>
+          <path d="M13 43C9 69 23 87 47 96C60 101 69 108 74 120C74 106 62 96 48 89C28 79 17 65 13 43Z"/>
+          <path d="M7 73C15 94 30 103 48 107C61 110 68 118 68 129C74 119 65 107 50 102C32 97 19 88 7 73Z"/>
+          <path d="M12 99C23 117 37 122 48 122C58 122 61 128 60 138C68 128 60 119 48 117C35 115 23 109 12 99Z"/>
+          <path d="M25 122C37 135 45 139 55 140C62 137 66 133 68 129C67 139 61 147 56 151C43 144 33 134 25 122Z"/>
+        </g>
+        <path d="M51 15C38 39 42 60 64 77M25 35C21 56 33 71 57 85M12 56C17 76 31 88 53 97" fill="none" stroke="#fff3a2" stroke-width="1.1" stroke-linecap="round" opacity=".75"/>
+        <path d="M86 77C99 107 76 137 57 151" fill="none" stroke="url(#g99-gold)" stroke-width="4" stroke-linecap="round"/>
+      </g>
+      <g stroke="#3e2a0a" stroke-width="2.8" stroke-linejoin="round" paint-order="stroke fill">
+        <path d="M205.64 129.47H228.7L224.06 151.59Q219.98 154.22 214.06 156.05Q208.14 157.88 201.98 157.88Q192.42 157.88 187.32 153.55Q180.36 147.65 180.36 136.43Q180.36 128.91 183.35 122.02Q186.94 113.72 193.55 109.15Q200.16 104.58 209.09 104.58Q218.02 104.58 223.41 108.73Q228.81 112.88 230.57 120.82L220.69 121.95Q219.39 117.59 216.49 115.38Q213.59 113.16 209.19 113.16Q204.06 113.16 199.77 115.83Q195.48 118.5 193.05 124.09Q190.63 129.68 190.63 136.29Q190.63 142.8 193.58 145.91Q196.54 149.02 202.23 149.02Q205.64 149.02 209.23 148.05Q212.81 147.09 215.41 145.75L217 138.09H203.85ZM266.71 145.61H246.28L240.09 157H229.2L258.34 105.46H270.12L278.48 157H268.43ZM265.41 137.03 262.42 116.29 249.97 137.03ZM295.78 157H285.16L295.96 105.46H318.84Q324.75 105.46 328.04 106.67Q331.32 107.89 333.35 111.12Q335.37 114.36 335.37 118.96Q335.37 125.54 331.43 129.81Q327.49 134.08 319.51 135.1Q321.55 136.93 323.34 139.91Q326.89 145.96 331.25 157H319.86Q318.49 152.64 314.48 143.39Q312.3 138.4 309.84 136.68Q308.33 135.66 304.57 135.66H300.25ZM301.86 127.93H307.49Q316.03 127.93 318.83 126.91Q321.62 125.89 323.2 123.71Q324.79 121.53 324.79 119.14Q324.79 116.32 322.5 114.92Q321.09 114.07 316.42 114.07H304.75ZM347.74 105.46H358.32L352.49 133.45L351.05 140.34Q350.91 141.21 350.91 141.99Q350.91 145.05 353.14 147.03Q355.37 149.02 359.62 149.02Q363.46 149.02 365.95 147.58Q368.45 146.14 369.82 143.29Q371.19 140.44 372.6 133.62L378.5 105.46H389.09L383.21 133.66Q381.35 142.55 378.93 147.26Q376.5 151.97 371.58 154.93Q366.66 157.88 359.13 157.88Q350.13 157.88 345.35 153.47Q340.57 149.05 340.57 142.13Q340.57 140.69 340.82 139Q340.96 137.88 342.05 132.6ZM389.12 157 399.91 105.46H413.8Q419.6 105.46 421.22 105.64Q424.42 105.95 426.93 106.94Q429.45 107.92 431.5 109.7Q433.56 111.47 435.05 113.97Q436.55 116.46 437.36 119.72Q438.16 122.97 438.16 126.84Q438.16 135.17 434.98 141.62Q431.8 148.07 426.98 151.87Q423.29 154.82 417.46 156.23Q414.15 157 407.3 157ZM401.46 148.7H406.84Q412.68 148.7 415.29 147.98Q417.91 147.26 420.09 145.29Q423.22 142.45 425.37 137.7Q427.51 132.95 427.51 126.52Q427.51 121.04 425.74 118.28Q423.96 115.52 421.36 114.6Q419.53 113.97 414.86 113.97H408.7ZM474.69 145.61H454.27L448.08 157H437.18L466.32 105.46H478.1L486.47 157H476.41ZM473.39 137.03 470.4 116.29 457.96 137.03Z" fill="url(#g99-silver)"/>
+        <path d="M494.55 145.12 504.01 144.34Q504.29 147.37 505.47 148.6Q506.65 149.83 508.65 149.83Q511.22 149.83 513.19 147.82Q516.07 144.91 517.76 138.4Q514.49 140.51 510.87 140.51Q504.89 140.51 501.02 136.45Q497.16 132.39 497.16 125.36Q497.16 117.48 502.11 111.37Q507.07 105.25 515.26 105.25Q522.5 105.25 526.34 110.52Q530.17 115.8 530.17 124.8Q530.17 138.68 524.03 148.28Q517.9 157.88 507.88 157.88Q502.01 157.88 498.49 154.52Q494.98 151.16 494.55 145.12ZM520.46 121.28Q520.46 117.2 518.85 115.29Q517.23 113.37 514.84 113.37Q511.89 113.37 509.78 116.11Q506.93 119.8 506.93 126.03Q506.93 130.04 508.51 131.95Q510.09 133.87 512.38 133.87Q514.31 133.87 516.28 132.39Q518.25 130.91 519.36 127.73Q520.46 124.55 520.46 121.28ZM534.6 145.12 544.05 144.34Q544.34 147.37 545.51 148.6Q546.69 149.83 548.7 149.83Q551.26 149.83 553.23 147.82Q556.11 144.91 557.8 138.4Q554.53 140.51 550.91 140.51Q544.93 140.51 541.07 136.45Q537.2 132.39 537.2 125.36Q537.2 117.48 542.16 111.37Q547.11 105.25 555.3 105.25Q562.55 105.25 566.38 110.52Q570.21 115.8 570.21 124.8Q570.21 138.68 564.08 148.28Q557.94 157.88 547.92 157.88Q542.05 157.88 538.54 154.52Q535.02 151.16 534.6 145.12ZM560.51 121.28Q560.51 117.2 558.89 115.29Q557.27 113.37 554.88 113.37Q551.93 113.37 549.82 116.11Q546.97 119.8 546.97 126.03Q546.97 130.04 548.55 131.95Q550.14 133.87 552.42 133.87Q554.36 133.87 556.32 132.39Q558.29 130.91 559.4 127.73Q560.51 124.55 560.51 121.28Z" fill="url(#g99-gold)"/>
+      </g>
+    </g>
+    <mask id="g99-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="640" height="210" style="mask-type:alpha"><use href="#g99-art"/></mask>
+    <clipPath id="g99-track"><path d="M216 229.5H424A1.5 1.5 0 0 1 424 232.5H216A1.5 1.5 0 0 1 216 229.5Z"/></clipPath>
+  </defs>
+  <style>
+    .g99-pulse { transform-origin:320px 118px;animation:g99-pulse 3s ease-in-out infinite }
+    .g99-shimmer { animation:g99-shimmer 2.8s ease-in-out infinite }
+    .g99-flow { animation:g99-flow 1.5s ease-in-out infinite }
+    .g99-dot { animation:g99-dot 1.5s ease-in-out infinite }
+    .g99-dot-2 { animation-delay:.16s }.g99-dot-3 { animation-delay:.32s }
+    @keyframes g99-pulse { 0%,100% { transform:scale(.985);opacity:.9 }50% { transform:scale(1);opacity:1 } }
+    @keyframes g99-shimmer { 0%,8% { transform:translateX(-160px) }72%,100% { transform:translateX(720px) } }
+    @keyframes g99-flow { from { transform:translateX(-90px) }to { transform:translateX(220px) } }
+    @keyframes g99-dot { 0%,65%,100% { opacity:.25 }30% { opacity:1 } }
+    @media(prefers-reduced-motion:reduce) {
+      .g99-pulse,.g99-shimmer,.g99-flow,.g99-dot { animation:none }
+      .g99-shimmer { display:none }.g99-flow { transform:translateX(62px) }
+    }
+  </style>
+  <path d="M35 118A285 109 0 1 0 605 118A285 109 0 1 0 35 118Z" fill="url(#g99-aura)"/>
+  <g class="g99-pulse">
+    <use href="#g99-art"/>
+    <g mask="url(#g99-mask)"><path class="g99-shimmer" d="M-40 0H42L132 210H50Z" fill="url(#g99-shine)"/></g>
+  </g>
+  <path d="M216 231H424" fill="none" stroke="#bd953f" stroke-opacity=".24" stroke-width="3" stroke-linecap="round"/>
+  <g clip-path="url(#g99-track)"><path class="g99-flow" d="M215 229H301V233H215Z" fill="url(#g99-flow)"/></g>
+  <g fill="#b48b35">
+    <path d="M277.73 264V256.84H278.68V263.16H282.21V264ZM286.24 260.51Q286.24 258.73 287.2 257.72Q288.16 256.71 289.67 256.71Q290.66 256.71 291.46 257.19Q292.26 257.66 292.67 258.51Q293.09 259.36 293.09 260.43Q293.09 261.52 292.65 262.38Q292.21 263.24 291.41 263.68Q290.6 264.12 289.67 264.12Q288.66 264.12 287.86 263.63Q287.07 263.15 286.66 262.3Q286.24 261.46 286.24 260.51ZM287.22 260.53Q287.22 261.82 287.92 262.57Q288.61 263.31 289.66 263.31Q290.73 263.31 291.42 262.56Q292.11 261.81 292.11 260.43Q292.11 259.55 291.82 258.9Q291.52 258.25 290.95 257.89Q290.39 257.53 289.68 257.53Q288.67 257.53 287.95 258.22Q287.22 258.91 287.22 260.53ZM296.73 264 299.47 256.84H300.49L303.42 264H302.35L301.51 261.83H298.52L297.73 264ZM298.79 261.06H301.22L300.47 259.08Q300.13 258.17 299.96 257.59Q299.83 258.28 299.58 258.96ZM307.38 264V256.84H309.85Q310.68 256.84 311.12 256.94Q311.74 257.09 312.17 257.46Q312.74 257.94 313.02 258.68Q313.3 259.42 313.3 260.38Q313.3 261.2 313.11 261.83Q312.92 262.46 312.62 262.87Q312.32 263.28 311.97 263.52Q311.61 263.76 311.11 263.88Q310.61 264 309.96 264ZM308.33 263.16H309.86Q310.56 263.16 310.97 263.02Q311.37 262.89 311.61 262.65Q311.95 262.32 312.13 261.75Q312.32 261.18 312.32 260.37Q312.32 259.24 311.95 258.64Q311.59 258.04 311.06 257.83Q310.68 257.69 309.83 257.69H308.33ZM317.96 264V256.84H318.91V264ZM323.77 264V256.84H324.74L328.5 262.46V256.84H329.41V264H328.44L324.68 258.38V264ZM337.55 261.19V260.35L340.58 260.35V263Q339.89 263.56 339.14 263.84Q338.4 264.12 337.62 264.12Q336.57 264.12 335.7 263.67Q334.84 263.22 334.4 262.36Q333.96 261.51 333.96 260.46Q333.96 259.41 334.4 258.5Q334.84 257.6 335.66 257.16Q336.48 256.72 337.55 256.72Q338.32 256.72 338.95 256.97Q339.58 257.22 339.94 257.67Q340.29 258.12 340.48 258.84L339.62 259.08Q339.46 258.53 339.22 258.22Q338.98 257.91 338.54 257.72Q338.09 257.53 337.55 257.53Q336.9 257.53 336.43 257.73Q335.96 257.93 335.67 258.25Q335.37 258.57 335.21 258.96Q334.94 259.62 334.94 260.4Q334.94 261.35 335.27 262Q335.6 262.64 336.23 262.96Q336.86 263.27 337.57 263.27Q338.18 263.27 338.77 263.03Q339.35 262.79 339.66 262.53V261.19Z"/>
+    <path class="g99-dot" d="M359 261A1.5 1.5 0 1 0 362 261A1.5 1.5 0 1 0 359 261Z"/>
+    <path class="g99-dot g99-dot-2" d="M368 261A1.5 1.5 0 1 0 371 261A1.5 1.5 0 1 0 368 261Z"/>
+    <path class="g99-dot g99-dot-3" d="M377 261A1.5 1.5 0 1 0 380 261A1.5 1.5 0 1 0 377 261Z"/>
+  </g>
+</svg>
     </div>
 
     <p id="countdown">Garuda99...</p>
 
     <script>
-        (function() {
-
+        (function () {
             const sites = [
                 'https://garuda99q.com',
                 'https://garuda99r.com',
@@ -98,14 +147,12 @@
             const countdownEl = document.getElementById('countdown');
             let seconds = 1;
 
-
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.href = targetUrl;
             }, 1300);
 
-
             if (countdownEl) {
-                const interval = setInterval(function() {
+                const interval = setInterval(function () {
                     seconds--;
                     if (seconds > 0) {
                         countdownEl.textContent = seconds + ' 秒后自动跳转';
